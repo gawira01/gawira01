@@ -336,7 +336,7 @@ myMyo = this;
 });
 var counter = 0;
 var y = 0;
-function checkLocation() {
+function checkLocation(average_z) {
 if (average_z >= 0.1 && average_z <= .3) {
 console.log('top');
 } 
@@ -354,6 +354,8 @@ Myo.on('orientation', function(data) {
 	if(counter === 40) {
 	average_z  = z/40;
 	console.log(average_z);
+		
+	checkLocation(average_z);
 	counter = 0;
 	z = 0;
 	}
