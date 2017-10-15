@@ -95,7 +95,50 @@ a {
 	      <b>Thank You</b>      
 	<center><button type="button" class="btn btn-secondary">Begin</button></center>
        <script language="JavaScript">
-       insert script here
+       Myo.connect();
+
+
+
+Myo.on('connected', function(){
+myMyo = this;
+});
+
+var counter = 0;
+var y = 0;
+
+
+function checkLocation() {
+if (average_z >= 0.1 && average_z <= .3) {
+console.log('top');
+} 
+
+if(average_z >=-0.01 && average_z <= -.05){
+console.log('bottom');
+}
+}
+
+
+
+function reset() {
+myMyo.zeroOrientation();
+var average_z = 0;
+var counter = 0;
+var z = 0;
+Myo.on('orientation', function(data) {
+// console.log(data.z);
+
+if(counter === 40) {
+
+average_z  = z/40;
+console.log(average_z);
+
+counter = 0;
+z = 0;
+
+}
+z+=data.z;
+counter++;
+});
        </script>
 	
 	      <p> </p>      
@@ -150,6 +193,7 @@ a {
          <script language="JavaScript">
        insert script here
        </script>
+	      <p> </p>
 	        <!-- Button trigger modal -->
 <center><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
 	<center>Click Here for Solution</center>
@@ -200,6 +244,7 @@ a {
         <script language="JavaScript">
        insert script here
        </script>
+	      <p> </p>
 	        <!-- Button trigger modal -->
 <center><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
 	<center>Click Here for Solution</center>
@@ -250,6 +295,7 @@ a {
          <script language="JavaScript">
        insert script here
        </script>
+	      <p> </p>
 	        <!-- Button trigger modal -->
 <center><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
 	<center>Click Here for Solution</center>
@@ -300,6 +346,7 @@ a {
          <script language="JavaScript">
        insert script here
        </script>
+	      <p> </p>
 	        <!-- Button trigger modal -->
 <center><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
 	<center>Click Here for Solution</center>
