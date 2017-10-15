@@ -362,7 +362,9 @@ counter++;
 });
 }
 	
-setTimeout(function(){ console.log("Hello"); }, 3000);
+setTimeout(function(){ 
+	Myo.on('orientation', function() {});
+}, 4000);
 	
   document.getElementById("first").onclick = function ()  {
     reset();
