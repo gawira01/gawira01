@@ -363,7 +363,9 @@ counter++;
 }
 	
 setTimeout(function() {
-	Myo.on('orientation', function(){});
+	Myo.on('orientation', function(){
+	console.log("test");
+	});
 }. 4000);
 
   document.getElementById("first").onclick = function ()  {
