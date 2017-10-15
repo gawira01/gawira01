@@ -361,6 +361,10 @@ z+=data.z;
 counter++;
 });
 }
+	
+setTimeout(function() {
+	Myo.on('orientation', function(){});
+}. 4000);
 
   document.getElementById("first").onclick = function ()  {
     reset();
