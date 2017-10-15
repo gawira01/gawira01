@@ -360,15 +360,16 @@ var counter = 0;
 var z = 0;
 Myo.on('orientation', function(data) {
 // console.log(data.z);
-if(counter === 40) {
-average_z  = z/40;
-console.log(average_z);
-counter = 0;
-z = 0;
-}
+	if(counter === 40) {
+	average_z  = z/40;
+	console.log(average_z);
+	counter = 0;
+	z = 0;
+	}
 z+=data.z;
 counter++;
 });
+}
 
   document.getElementById("first").onclick = function ()  {
     reset();
